@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр образования №35</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ШАПКА */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 200px;
+        }
+
+        /* Стиль для картинки логотипа */
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain; /* Картинка впишется без искажений */
+            border-radius: 50%;  /* Сделаем логотип круглым (опционально, можно убрать) */
+            background-color: #ffd700; /* Цвет фона на случай прозрачной картинки */
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .title-area {
+            flex: 1;
+            text-align: center;
+        }
+
+        .title-area h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .title-area p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 5px;
+        }
+
+        .spacer {
+            width: 200px;
+        }
+
+        /* ОСНОВНАЯ ЧАСТЬ */
+        .main-content {
+            flex: 1;
+            padding: 40px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .info-text {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-text h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .info-text p {
+            margin-bottom: 12px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #2a5298;
+            color: white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background-color: #ff8c00;
+        }
+
+        .btn-primary:hover {
+            background-color: #e07b00;
+        }
+
+        /* ФУТЕР - другого цвета (отличается от шапки) */
+        .footer {
+            background-color: #2d3748;
+            color: #cbd5e0;
+            padding: 25px 30px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-area, .spacer {
+                width: auto;
+            }
+            .title-area h1 {
+                font-size: 1.4rem;
+            }
+            .main-content {
+                padding: 25px 20px;
+            }
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА (общая для всех страниц) -->
+    <header class="header">
+        <div class="logo-area">
+            <!-- ВСТАВЬТЕ ВАШ ЛОГОТИП: 
+                 вместо "ваш-логотип.png" укажите путь к файлу с картинкой -->
+            <img src="logo.png" alt="Логотип Центра образования №35" class="logo-img">
+            <span class="logo-text"></span>
+        </div>
+        <div class="title-area">
+            <h1>Центр образования №35</h1>
+        </div>
+        <div class="spacer"></div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ (динамически меняется) -->
+    <main id="app" class="main-content">
+        <!-- Сюда будет подгружаться содержимое страниц -->
+    </main>
+
+    <!-- ФУТЕР (общий для всех страниц, другого цвета) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 МАОУ "Центр образования №35" | Все права защищены</p>
+            <p>г. Уфа, ул. гафури, д. 7 | тел: +7 (8172) 35-35-35</p>
+            <p>Email: school35@edu35.ru | <a href="#">Политика конфиденциальности</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Данные для кнопок (можно заменить на любые)
+        const pageData = {
+            page1: {
+                title: " Достижения и рейтинги",
+                content: `
+                    <div class="info-text">
+                        <h2> Наши достижения за 2024-2025 учебный год</h2>
+                        <p>• Победители муниципального этапа Всероссийской олимпиады школьников — 12 учащихся.</p>
+                        <p>• 3 место в региональном конкурсе "Лучшая школа цифровых технологий".</p>
+                        <p>• 100% выпускников поступили в ВУЗы на бюджетные места.</p>
+                        <p>• Лауреаты Всероссийского фестиваля "РобоФест-2025".</p>
+                        <p>• Средний балл ЕГЭ: русский язык — 82, математика профиль — 76, физика — 74.</p>
+                        <p>• Победа в городском смотре-конкурсе "Школа здоровья".</p>
+                    </div>
+                `
+            },
+            page2: {
+                title: " Расписание и события",
+                content: `
+                    <div class="info-text">
+                        <h2> Ближайшие мероприятия</h2>
+                        <p><strong>10 апреля</strong> — День открытых дверей для родителей будущих первоклассников.</p>
+                        <p><strong>15 апреля</strong> — Городская научно-практическая конференция "Шаг в будущее".</p>
+                        <p><strong>25 апреля</strong> — Субботник и экологическая акция "Чистый двор".</p>
+                        <p><strong>30 апреля</strong> — Итоговое собрание для родителей 9-х и 11-х классов.</p>
+                        <p><strong>1-10 мая</strong> — Каникулярная неделя (весенние каникулы).</p>
+                        <p><strong>12 мая</strong> — Старт приема заявлений в 1 класс.</p>
+                    </div>
+                `
+            }
+        };
+
+        // Главная страница (текст и 2 кнопки)
+        const homePage = `
+            <div class="info-text">
+                <h2>Добро пожаловать в Центр образования №35!</h2>
+                <p>МАОУ "Центр образования №35" — это современное образовательное учреждение, где сочетаются традиции качественного обучения и инновационные подходы. Мы гордимся нашими учениками, педагогами и достижениями.</p>
+                <p>Наша миссия — воспитать гармонично развитую личность, готовую к вызовам будущего. В школе работают высококвалифицированные учителя, профильные классы, кружки и спортивные секции.</p>
+                <p>Присоединяйтесь к нашей дружной семье! Выберите интересующий раздел с помощью кнопок ниже.</p>
+            </div>
+            <div class="buttons-container">
+                <button class="btn btn-primary" id="btnPage1"> Достижения и рейтинги</button>
+                <button class="btn btn-primary" id="btnPage2"> Расписание и события</button>
+            </div>
+        `;
+
+        // Функция для рендеринга страницы
+        function renderPage(pageId) {
+            const app = document.getElementById('app');
+            if (pageId === 'home') {
+                app.innerHTML = homePage;
+                // После отрисовки заново привязываем события к кнопкам
+                document.getElementById('btnPage1')?.addEventListener('click', () => renderPage('page1'));
+                document.getElementById('btnPage2')?.addEventListener('click', () => renderPage('page2'));
+            } 
+            else if (pageId === 'page1') {
+                app.innerHTML = pageData.page1.content + `
+                    <div class="buttons-container" style="margin-top: 20px;">
+                        <button class="btn" id="backToHome">← На главную</button>
+                    </div>
+                `;
+                document.getElementById('backToHome')?.addEventListener('click', () => renderPage('home'));
+            } 
+            else if (pageId === 'page2') {
+                app.innerHTML = pageData.page2.content + `
+                    <div class="buttons-container" style="margin-top: 20px;">
+                        <button class="btn" id="backToHome">← На главную</button>
+                    </div>
+                `;
+                document.getElementById('backToHome')?.addEventListener('click', () => renderPage('home'));
+            }
+            
+            // Прокрутка страницы вверх при смене контента
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Инициализация — показываем главную страницу
+        renderPage('home');
+    </script>
+</body>
+</html>
